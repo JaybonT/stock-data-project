@@ -1,0 +1,12 @@
+import sys
+import os
+
+# Add the src/api directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../src/api')))
+
+from alphavantage import fetch_stock_data
+
+if __name__ == "__main__":
+    symbol = input("Enter stock symbol (e.g., IBM): ").upper()
+    data = fetch_stock_data(symbol)
+    print(data)
